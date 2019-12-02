@@ -1,0 +1,27 @@
+
+.l-header {
+    height: 58px;
+}
+
+.goat-logo {
+    height: 40px;
+}
+
+.top-menu {
+    margin-left: 50px;
+}
+
+.top-menu li {
+    box-shadow: none !important;
+}
+
+.l-sample-app {
+    text-align: center;
+}
+
+.goat-image {
+    align-self: center;
+    max-height: 400px;
+    width: 400px;
+    border-radius: 4px;
+}
