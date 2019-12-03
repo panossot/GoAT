@@ -26,11 +26,11 @@ import {AllFunctions} from "./functions.component";
         </li>
         <li>
             <a routerLinkActive="menu-active"  
-                routerLink="courses">Editor</a>
+                routerLink="editor">Editor</a>
         </li>
         <li>
             <a routerLinkActive="menu-active" 
-                [routerLink]="['lessons']">Git Functions</a>
+                [routerLink]="['git']">Git Functions</a>
         </li>
     </ul>
             

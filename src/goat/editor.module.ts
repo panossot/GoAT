@@ -2,23 +2,23 @@
 
 import {NgModule} from "@angular/core";
 import {CommonModule} from "@angular/common";
-import {Chat} from "./chat";
-import {Goat} from "./goat.component";
+import {EditorBox} from "./editorbox";
+import {Editor} from "./editor.component";
 import {RouterModule} from "@angular/router";
 
 
 const routerConfig = [
     {
         path: '',
-        component: Goat
+        component: Editor
     }
 ];
 
 
 @NgModule({
-    imports: [CommonModule, Goat,
+    imports: [CommonModule, Editor,
         RouterModule.forChild(routerConfig)],
-    declarations: [Chat],
+    declarations: [EditorBox],
 })
 export default class GoatModule {
 

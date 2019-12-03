@@ -3,7 +3,7 @@
 import {Component} from "@angular/core";
 
 @Component({
-    selector:'chat',
+    selector:'editorbox',
     template: `
 
     <div class="chat card card-strong">
@@ -14,6 +14,6 @@ import {Component} from "@angular/core";
 
 `
 })
-export class Chat {
+export class EditorBox {
 
 }

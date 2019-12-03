@@ -1,7 +1,7 @@
 import {AllFunctions} from "./functions.component";
 import {Home} from "./home.component";
 import {Route} from "@angular/router";
-import {goatRouterConfig} from "./goat-router-config";
+import {editorRouterConfig} from "./editor-router-config";
 
 
 const indexRoute:Route = {
@@ -19,9 +19,9 @@ export const routeConfig = [
         path: 'home',
         component: Home
     },
-    ...goatRouterConfig,
+    ...editorRouterConfig,
     {
-        path: 'goat',
+        path: 'git',
         component: AllFunctions
     },
     fallbackRoute,
