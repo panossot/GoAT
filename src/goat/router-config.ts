@@ -1,7 +1,7 @@
 import {AllFunctions} from "./functions.component";
 import {Home} from "./home.component";
 import {Route} from "@angular/router";
-import {editorRouterConfig} from "./editor-router-config";
+import {Editor} from "./editor.component";
 
 
 const indexRoute:Route = {
@@ -19,7 +19,10 @@ export const routeConfig = [
         path: 'home',
         component: Home
     },
-    ...editorRouterConfig,
+    {
+        path: 'editor',
+        component: Editor
+    },
     {
         path: 'git',
         component: AllFunctions

@@ -7,6 +7,8 @@ import {routeConfig} from "./router-config";
 import {Home} from "./home.component";
 import {GoatList} from "./goat-list.component";
 import {AllFunctions} from "./functions.component";
+import {Editor} from "./editor.component";
+import {EditorBox} from "./editorbox"
 
 
 @Component({
@@ -64,10 +66,10 @@ export class App {
 
 
 @NgModule({
-    declarations: [App, Home, GoatList, AllFunctions],
+    declarations: [App, Home, GoatList, AllFunctions, Editor, EditorBox],
     imports: [
         BrowserModule,
-        RouterModule.forRoot(routeConfig),
+        RouterModule.forRoot(routeConfig)
     ],
     bootstrap: [App]
 
