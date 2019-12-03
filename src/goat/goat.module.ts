@@ -5,7 +5,6 @@ import {CommonModule} from "@angular/common";
 import {Chat} from "./chat";
 import {Goat} from "./goat.component";
 import {RouterModule} from "@angular/router";
-import {SharedModule} from "./shared.module";
 
 
 const routerConfig = [
@@ -17,8 +16,8 @@ const routerConfig = [
 
 
 @NgModule({
-    imports: [CommonModule,
-        RouterModule.forChild(routerConfig), SharedModule],
+    imports: [CommonModule, Goat,
+        RouterModule.forChild(routerConfig)],
     declarations: [Chat],
 })
 export default class GoatModule {

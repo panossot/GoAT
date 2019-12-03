@@ -4,7 +4,6 @@ import {platformBrowserDynamic} from "@angular/platform-browser-dynamic";
 import {BrowserModule} from "@angular/platform-browser";
 import {RouterModule} from "@angular/router";
 import {routeConfig} from "./router-config";
-import {SharedModule} from "./shared.module";
 import {Home} from "./home.component";
 import {GoatList} from "./goat-list.component";
 import {AllFunctions} from "./functions.component";
@@ -69,7 +68,6 @@ export class App {
     imports: [
         BrowserModule,
         RouterModule.forRoot(routeConfig),
-        SharedModule
     ],
     bootstrap: [App]
 

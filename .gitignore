@@ -8,3 +8,4 @@ dist/
 tmp
 *.js
 *.map
+/nbproject/private/
