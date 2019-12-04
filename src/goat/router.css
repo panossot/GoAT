@@ -25,3 +25,16 @@
     width: 400px;
     border-radius: 4px;
 }
+
+ul.top-menu > li > a.menu-active {
+    color: #ee1c1b;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.main-container .list {
+    display: inline-block;
+    max-width: 1000px;
+    vertical-align: top;
+    margin-right: 50px;
+}
