@@ -27,10 +27,10 @@ import {goatData} from "./goatData";
         <table class="buttons" style="min-width:500px;">
                 <tr>
                     <td style="width=250px; padding: 10px 10px 10px 10px; align: center;">
-                        <button>Clone Repository</button>
+                        <div id='clone' class='button'>Clone Repository</div>
                     </td>
                     <td style="width=250px; padding: 10px 10px 10px 10px; align: center;">
-                        <button>Commit and Push</button>
+                        <div id='commit' class='button'>Commit and Push</div>
                     </td>
                 </tr>
            </table>

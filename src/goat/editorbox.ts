@@ -8,7 +8,7 @@ import {Component} from "@angular/core";
 
     <div class="chat card card-strong">
         
-        <textarea style="min-width:1000px; min-height:1000px;"></textarea>
+        <textarea id="box" style="min-width:1000px; min-height:1000px;"></textarea>
     
     </div>
 
