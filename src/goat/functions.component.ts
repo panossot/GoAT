@@ -27,6 +27,10 @@ function gitfunctions() {
         <br/>
         <input type="text" name="directory" style="min-width:500px;" value="master"/>
         <br/><br/>
+        <b>Clone Directory : </b>
+        <br/>
+        <input type="text" name="clonedirectory" style="min-width:500px;" value="ArtemisActivemqAT"/>
+        <br/><br/>
         <b>Commit Message : </b>
         <br/>
         <input type="text" name="commitmessage" style="min-width:500px;" value="commit message ..."/>
@@ -37,7 +41,7 @@ function gitfunctions() {
                         <div id='clone' (click)="goatService.gitClone('6','master')" class='button'>Clone Repository</div>
                     </td>
                     <td style="width=250px; padding: 10px 10px 10px 10px; align: center;">
-                        <div id='commit' (click)="goatService.gitCommitPush('6','origin','master','Test commit message ...')" class='button'>Commit and Push</div>
+                        <div id='commit' (click)="goatService.gitCommitPush('6','origin','master','ArtemisActivemqAT','Test commit message ...')" class='button'>Commit and Push</div>
                     </td>
                 </tr>
            </table>

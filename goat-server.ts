@@ -32,12 +32,13 @@ app.route('/gitclone/:gitnum/:gitbranch')
         console.log('Cloning of ', goaturl,' is done.');
     });
     
-app.route('/gitcommitpush/:gitnum/:gitrepo/:gitbranch/:gitcommitmessage')
+app.route('/gitcommitpush/:gitnum/:gitrepo/:gitbranch/:clonedir/:gitcommitmessage')
     .post((req,res) => {
         const gitatnum = req.params.gitnum;
         const gitbranch = req.params.gitbranch;
         const gitrepo = req.params.gitrepo;
         const gitcommitmessage = req.params.gitcommitmessage;
+        const clonedir = req.params.clonedir;
         let goaturl = null;
         for (let goat of goats['goat']) {
             if(goat.id == gitatnum) {
@@ -45,6 +46,8 @@ app.route('/gitcommitpush/:gitnum/:gitrepo/:gitbranch/:gitcommitmessage')
             }
         }
         const execSync = require('child_process').execSync;
+        const output = execSync('cd '+clonedir, { encoding: 'utf-8' });
+        console.log('cd'+clonedir+':\n', output);
         const output0 = execSync('git add .', { encoding: 'utf-8' });
         console.log('Git addition done:\n', output0);
         const output1 = execSync('git commit -m "'+gitcommitmessage+'"', { encoding: 'utf-8' });

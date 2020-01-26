@@ -19,8 +19,8 @@ export class GoatService {
             );
     }
 
-    gitCommitPush(gitnum,gitbranch,gitrepo,commitmessage) {
-        this.http.post(`/gitcommitpush/${gitnum}/${gitrepo}/${gitbranch}/${commitmessage}`, xhrHeaders())
+    gitCommitPush(gitnum,gitrepo,gitbranch,clonedir,commitmessage) {
+        this.http.post(`/gitcommitpush/${gitnum}/${gitrepo}/${gitbranch}/${clonedir}/${commitmessage}`, xhrHeaders())
             .subscribe(
                 () => {},
                 err => console.error(err)
