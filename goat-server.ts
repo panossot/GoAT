@@ -15,10 +15,11 @@ app.use(bodyParser.text());
 
 const goats =goatData;
 
-app.route('/gitclone/:gitnum/:gitbranch')
+app.route('/gitclone/:gitnum/:gitbranch/:clonedir')
     .post((req,res) => {
         const gitatnum = req.params.gitnum;
         const gitbranch = req.params.gitbranch;
+        const clonedir = req.params.clonedir;
         let goaturl = null;
         for (let goat of goats['goat']) {
             if(goat.id == gitatnum) {
@@ -26,8 +27,13 @@ app.route('/gitclone/:gitnum/:gitbranch')
             }
         }
         const execSync = require('child_process').execSync;
-        const output = execSync('git clone '+goaturl+' -b '+gitbranch, { encoding: 'utf-8' });
-        console.log('Cloning:\n', output);
+        if(clonedir=='null') {
+            const output = execSync('git clone '+goaturl+' -b '+gitbranch, { encoding: 'utf-8' });
+            console.log('Cloning:\n', output);
+        }else{
+            const output1 = execSync('git clone '+goaturl+' -b '+gitbranch + ' ' + clonedir, { encoding: 'utf-8' });
+            console.log('Cloning:\n', output1);
+        }
         res.status(200).send();
         console.log('Cloning of ', goaturl,' is done.');
     });
@@ -46,16 +52,14 @@ app.route('/gitcommitpush/:gitnum/:gitrepo/:gitbranch/:clonedir/:gitcommitmessag
             }
         }
         const execSync = require('child_process').execSync;
-        if(clonedir!='') {
-            const output = execSync('cd '+clonedir, { encoding: 'utf-8' });
-            console.log('cd '+clonedir+':\n', output);
-            const output0 = execSync('git add .', { encoding: 'utf-8' });
+        if(clonedir!='null') {
+            const output0 = execSync('cd ' + clonedir + ';git add .', { encoding: 'utf-8' });
             console.log('Git addition done:\n', output0);
             try {
-                const output1 = execSync('git commit -m "'+gitcommitmessage+'"', { encoding: 'utf-8' });
+                const output1 = execSync('cd ' + clonedir + ';git commit -m "'+gitcommitmessage+'"', { encoding: 'utf-8' });
                 console.log('Git commit done:\n', output1);
             }finally{
-                const output2 = execSync('git push '+gitrepo+' '+gitbranch, { encoding: 'utf-8' });
+                const output2 = execSync('cd ' + clonedir + ';git push '+gitrepo+' '+gitbranch, { encoding: 'utf-8' });
                 console.log('Git push done:\n', output2);
                 res.status(200).send();
                 console.log('Commit and push of ', goaturl,' is done.');

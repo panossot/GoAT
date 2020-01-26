@@ -11,8 +11,8 @@ export class GoatService {
 
     }
 
-    gitClone(gitnum,gitbranch) {
-        this.http.post(`/gitclone/${gitnum}/${gitbranch}`, xhrHeaders())
+    gitClone(gitnum,gitbranch,clonedir) {
+        this.http.post(`/gitclone/${gitnum}/${gitbranch}/${clonedir}`, xhrHeaders())
             .subscribe(
                 () => {},
                 err => console.error(err)

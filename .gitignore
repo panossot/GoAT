@@ -7,4 +7,4 @@ npm-debug.log
 tmp
 *.js
 *.map
-/nbproject
+nbproject
