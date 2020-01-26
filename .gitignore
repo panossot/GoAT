@@ -8,3 +8,4 @@ tmp
 *.js
 *.map
 nbproject
+yarn.lock

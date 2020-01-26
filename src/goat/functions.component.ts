@@ -27,7 +27,7 @@ import {GoatService} from "./goat.service";
         <br/><br/>
         <b>Commit Message : </b>
         <br/>
-        <input type="text" name="commitmessage" style="min-width:500px;" value="commit message ..."/>
+        <input type="text" id="commitmessage" name="commitmessage" style="min-width:500px;" value="commit message ..."/>
         <br/><br/>
         <table class="buttons" style="min-width:500px;">
                 <tr>
@@ -35,7 +35,7 @@ import {GoatService} from "./goat.service";
                         <div id='clone' (click)="goatService.gitClone(getCloneRepoId(),getCloneBranch(),getCloneDir())" class='button'>Clone Repository</div>
                     </td>
                     <td style="width=250px; padding: 10px 10px 10px 10px; align: center;">
-                        <div id='commit' (click)="goatService.gitCommitPush(getCloneRepoId(),'origin','master:testrepo3','ArtemisActivemqAT2','Test commit message ...')" class='button'>Commit and Push</div>
+                        <div id='commit' (click)="goatService.gitCommitPush(getCloneRepoId(),'origin',getCloneBranch(),getCloneDir(),getCommitMessage())" class='button'>Commit and Push</div>
                     </td>
                 </tr>
            </table>
@@ -71,5 +71,12 @@ export class AllFunctions {
         goatDir = document.getElementById('clonedirectory').value;
         
         return goatDir;
+    }
+    
+    getCommitMessage() {
+        let commitMessage = null;
+        commitMessage = document.getElementById('commitmessage').value;
+        
+        return commitMessage;
     }
 }
