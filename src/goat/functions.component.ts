@@ -18,7 +18,7 @@ function gitfunctions() {
 
         <b>Github Repository : </b>
         <br/>
-        <input type="text" name="product" list="productName" style="min-width:500px;"/>
+        <input type="text" name="repo" list="repoName" style="min-width:500px;"/>
         <datalist id="repoName">
             <option *ngFor="let goat of goats" value="{{goat.giturl}}">{{goat.giturl}}</option>
         </datalist>
