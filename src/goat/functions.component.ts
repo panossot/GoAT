@@ -12,7 +12,7 @@ import {GoatService} from "./goat.service";
 
         <b>Github Repository : </b>
         <br/>
-        <input type="text" id="repoName" name="repo" list="repoList" style="min-width:500px;"/>
+        <input type="text" id="repoName" name="repo" list="repoList" style="min-width:500px;" value="https://github.com/"/>
         <datalist id="repoList">
             <option *ngFor="let goat of goats" value="{{goat.giturl}}">{{goat.giturl}}</option>
         </datalist>
