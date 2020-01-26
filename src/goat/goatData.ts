@@ -14,8 +14,8 @@ export const goatData = {
     },
     {
         id: 3,
-        url: 'https://github.com/panossot/Project2ndChanceAT',
-        giturl: 'https://github.com/panossot/Project2ndChanceAT.git',
+        url: 'https://github.com/Lkop/Project2ndChanceAT',
+        giturl: 'https://github.com/Lkop/Project2ndChanceAT.git',
         description:'Project 2nd Chance Additional Testsuite',
     },
     {
@@ -38,8 +38,8 @@ export const goatData = {
     },
     {
         id: 7,
-        url: 'https://github.com/panossot/JBossModulesAT',
-        giturl: 'https://github.com/panossot/JBossModulesAT.git',
+        url: 'https://github.com/koderproxy/JBossModulesAT',
+        giturl: 'https://github.com/koderproxy/JBossModulesAT.git',
         description:'JBoss Modules Additional Testsuite',
     },
     {
@@ -65,5 +65,11 @@ export const goatData = {
         url: 'https://github.com/panossot/ThornTailAT',
         giturl: 'https://github.com/panossot/ThornTailAT.git',
         description:'Thorntail Additional Testsuite',
+    },
+    {
+        id: 12,
+        url: 'https://github.com/panossot/remoteReposAT',
+        giturl: 'https://github.com/panossot/remoteReposAT.git',
+        description:'Remote Additional Testsuite',
     }
 ]};
