@@ -7,8 +7,10 @@ import {routeConfig} from "./router-config";
 import {Home} from "./home.component";
 import {GoatList} from "./goat-list.component";
 import {AllFunctions} from "./functions.component";
+import {HttpModule} from "@angular/http";
 import {Editor} from "./editor.component";
-import {EditorBox} from "./editorbox"
+import {EditorBox} from "./editorbox";
+import {GoatService} from "./goat.service";
 
 
 @Component({
@@ -69,8 +71,10 @@ export class App {
     declarations: [App, Home, GoatList, AllFunctions, Editor, EditorBox],
     imports: [
         BrowserModule,
+        HttpModule,
         RouterModule.forRoot(routeConfig)
     ],
+    providers: [GoatService],
     bootstrap: [App]
 
 })

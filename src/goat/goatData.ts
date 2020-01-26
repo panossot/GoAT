@@ -14,8 +14,8 @@ export const goatData = {
     },
     {
         id: 3,
-        url: 'https://github.com/Lkop/Project2ndChanceAT',
-        giturl: 'https://github.com/Lkop/Project2ndChanceAT.git',
+        url: 'https://github.com/panossot/Project2ndChanceAT',
+        giturl: 'https://github.com/panossot/Project2ndChanceAT.git',
         description:'Project 2nd Chance Additional Testsuite',
     },
     {
@@ -59,5 +59,11 @@ export const goatData = {
         url: 'https://github.com/panossot/ActivemqAT',
         giturl: 'https://github.com/panossot/ActivemqAT.git',
         description:'Active MQ Additional Testsuite',
+    },
+    {
+        id: 11,
+        url: 'https://github.com/panossot/ThornTailAT',
+        giturl: 'https://github.com/panossot/ThornTailAT.git',
+        description:'Thorntail Additional Testsuite',
     }
 ]};

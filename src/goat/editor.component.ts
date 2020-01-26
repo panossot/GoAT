@@ -2,7 +2,9 @@ import {Component, OnInit} from "@angular/core";
 
 function browse() {
     var tbox = document.getElementById('box');
-    tbox.value = sessionStorage.getItem("boxtext");
+    if(sessionStorage.getItem("boxtext")!='null')
+        tbox.value = sessionStorage.getItem("boxtext");
+    var fileName = "MFile.txt"
     
     document.querySelector("#pick").addEventListener("click", function(e) {
 			JSFileManager.pick({ event: e }).then(function(file) {
@@ -24,7 +26,7 @@ function browse() {
                 
     document.querySelector("#save").addEventListener("click", function(e) {
 			// Save it
-			new JSFile(tbox.value, "MyFile.txt").save({ event: e }).then(function(file) {
+			new JSFile(tbox.value, fileName).save({ event: e }).then(function(file) {
 
 				console.log(file);
 				alert(file.name + " is  saved.");
@@ -34,7 +36,7 @@ function browse() {
 		});
     document.querySelector("#save2").addEventListener("click", function(e) {
 			// Save it
-			new JSFile(tbox.value, "MyFile.txt").save({ event: e }).then(function(file) {
+			new JSFile(tbox.value, fileName).save({ event: e }).then(function(file) {
 
 				console.log(file);
 				alert(file.name + " is  saved.");
@@ -42,7 +44,9 @@ function browse() {
 			});
 
 		});
+
 }
+
 
 @Component({
     selector: 'editor',
@@ -67,7 +71,7 @@ function browse() {
 export class Editor implements OnInit {
     
     ngOnInit(){
-        browse()
+        browse();
     }
 }
 
