@@ -26,4 +26,12 @@ export class GoatService {
                 err => console.error(err)
             );
     }
+    
+    saveAs(filepath) {
+        this.http.post(`/savefile/${filepath}`, xhrHeaders())
+            .subscribe(
+                () => {},
+                err => console.error(err)
+            );
+    }
 }

@@ -67,6 +67,20 @@ app.route('/gitcommitpush/:gitnum/:gitrepo/:gitbranch/:clonedir/:gitcommitmessag
         }
     });
     
+ app.route('/savefile/:savepath')
+    .post((req,res) => {
+        const savepath = req.params.savepath.replace("%2F","/");
+        const saveFileName = 'GoATFile.txt';
+        console.log('savepath:\n', savepath);
+        const execSync = require('child_process').execSync;
+        if(savepath!='null' && savepath.includes('/')) {
+            const output = execSync('savepath='+savepath+'; savedirpath=${savepath%/*}; mkdir -p $savedirpath; mv $HOME/Downloads/'+saveFileName+' '+savepath, { encoding: 'utf-8' });
+            console.log('Git path save is done:\n', output);
+            res.status(200).send();
+            console.log('File save at ', savepath,' is done.');
+        }
+    });
+    
 function redirectRouterLessonUnmatched(req,res) {
     res.sendFile("index.html", { root: './src/goat' });
 }
