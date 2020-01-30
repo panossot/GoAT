@@ -48,27 +48,38 @@ function browse() {
 			})
 		});
                 
- /*   document.querySelector("#save").addEventListener("click", function(e) {
+    document.querySelector("#save").addEventListener("click", function(e) {
 			// Save it
 			new JSFile(tbox.value, fileName).save({ event: e }).then(function(file) {
 
 				console.log(file);
-				alert(tpath.value + " is  saved.");
 
-			});
-
+                        });
+                                     
+    
 		});
+                
+   document.querySelector("#save").addEventListener("click", function(e) {
+                    setTimeout(function(){
+			document.getElementById('saveToPath').click(); }
+                    ,3000);                 
+		});
+                
     document.querySelector("#save2").addEventListener("click", function(e) {
 			// Save it
 			new JSFile(tbox.value, fileName).save({ event: e }).then(function(file) {
 
 				console.log(file);
-				alert(tpath2.value + " is  saved.");
 
 			});
 
 		});
-*/
+                
+    document.querySelector("#save2").addEventListener("click", function(e) {
+                    setTimeout(function(){
+			document.getElementById('saveToPath2').click(); }
+                    ,3000);                 
+		});
 }
 
 
@@ -79,8 +90,13 @@ function browse() {
         <h1>Editor</h1>
 
         <div id='pick' class='button'>Pick a file</div>
-        <div id='save' (click)="goatService.saveAs(pathProcessing('savepath'))" class='button'>Save to file as</div>
+        
+        <div id='save' class='button'>Save to file as</div>
         <input type="text" id="savepath" style="min-width:500px;" value="/home/..."/>
+        <br/>
+        <div id='saveToPath' (click)="saveToPath('savepath');" class='button' style="display:none">Save to file as</div>
+        
+        
         
         <br/><br/><br/>
         
@@ -89,8 +105,10 @@ function browse() {
         <br/><br/><br/>
         
         <div id='pick2' class='button'>Pick a file</div>
-        <div id='save2' (click)="goatService.saveAs(pathProcessing('savepath2'))" class='button'>Save to file as</div>
+        <div id='save2' class='button'>Save to file as</div>
         <input type="text" id="savepath2" style="min-width:500px;" value="/home/..."/>
+        <br/>
+        <div id='saveToPath2' (click)="saveToPath('savepath2');" class='button' style="display:none">Save to file as</div>
     `
 })
 
@@ -99,17 +117,11 @@ export class Editor implements OnInit {
     constructor(private goatService: GoatService) {
     }
     
-    pathProcessing(savepath) {
-        new JSFile(document.getElementById('box').value, 'GoATFile.txt').save(
-            ).then(function(file) {
-
-				console.log(file);
-			});
-        
-
-        for(var i=0; i<10000000; i++){}
+    
+    saveToPath(savepath) {
         
         let processedpath=document.getElementById(savepath).value;
+        let goatService = this.goatService;
         
         console.log('processedpath:\n', processedpath);
         
@@ -119,9 +131,9 @@ export class Editor implements OnInit {
         
         console.log('processedpath:\n', processedpath);
         
-     //   alert(document.getElementById(savepath).value + " is  saved.");
-        
-        return processedpath;
+        goatService.saveAs(processedpath);
+
+        alert(document.getElementById(savepath).value + " is  saved.");
     }
     
     ngOnInit(){
