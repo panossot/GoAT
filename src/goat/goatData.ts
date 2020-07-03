@@ -2,9 +2,9 @@ export const goatData = {
     goat: [
     {
         id: 1,
-        url: 'https://github.com/jboss-set/eap-additional-testsuite',
-        giturl: 'https://github.com/jboss-set/eap-additional-testsuite.git',
-        description:'Eap Additional Testsuite',
+        url: 'https://github.com/EAT-JBCOMMUNITY/EAT',
+        giturl: 'https://github.com/EAT-JBCOMMUNITY/EAT.git',
+        description:'EAT',
     },
     {
         id: 2,
@@ -71,5 +71,11 @@ export const goatData = {
         url: 'https://github.com/panossot/remoteReposAT',
         giturl: 'https://github.com/panossot/remoteReposAT.git',
         description:'Remote Additional Testsuite',
+    },
+    {
+        id: 13,
+        url: 'https://github.com/jboss-set/eap-additional-testsuite',
+        giturl: 'https://github.com/jboss-set/eap-additional-testsuite.git',
+        description:'Eap Additional Testsuite',
     }
 ]};
